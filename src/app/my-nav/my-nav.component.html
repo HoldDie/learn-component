@@ -1,0 +1,38 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/eventBinding">Event Binding</a>
+      <a mat-list-item routerLink="/interpolation">Interpolation</a>
+      <a mat-list-item routerLink="/ngClass">ng Class</a>
+      <a mat-list-item routerLink="/ngFor">ng For</a>
+      <a mat-list-item routerLink="/ngIf">ng If</a>
+      <a mat-list-item routerLink="/ngModel">ng Model</a>
+      <a mat-list-item routerLink="/ngStyle">ng Style</a>
+      <a mat-list-item routerLink="/ngSwitch">ng Switch</a>
+      <a mat-list-item routerLink="/pipe">Pipe</a>
+      <a mat-list-item routerLink="/safeNav">Safe Nav</a>
+      <a mat-list-item routerLink="/tempRefVar">Temp Ref Var</a>
+      <a mat-list-item routerLink="/twowayBinding">TwoWay Binding</a>
+      <a mat-list-item routerLink="/valueBinding">Value Binding</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>learn-component</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,16 @@
+<div>
+  <div>temp ref variable</div>
+  <div>
+    <label>
+      <input #heroInput>
+    </label>
+    <p>{{heroInput.value}}</p>
+    <button (click)="sayHello(heroInput.name)">local Variable</button>
+    <div></div>
+    <label>
+      <input [(ngModel)]="currentValue.name">
+    </label>
+    <p>{{currentValue.name}}</p>
+    <button (click)="sayHello(currentValue.name)">local Variable1</button>
+  </div>
+</div>

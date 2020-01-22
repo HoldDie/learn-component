@@ -1,0 +1,10 @@
+<div>
+  <div>*ngSwitch usage</div>
+  <div>
+    <div [ngSwitch]="mapStatus">
+      <p *ngSwitchCase="0">Downloading</p>
+      <p *ngSwitchCase="1">Loading</p>
+      <p *ngSwitchDefault>The System is busy</p>
+    </div>
+  </div>
+</div>

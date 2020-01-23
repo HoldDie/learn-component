@@ -18,6 +18,7 @@ export class FontResizerComponent implements OnInit {
 
   dec() {
     this.resize(-1);
+    console.log('size:', this.size);
   }
 
   inc() {
